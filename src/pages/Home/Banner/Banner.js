@@ -19,17 +19,8 @@ const Banner = () => {
                     </div>
                 </div>
 
-                <div id="item2" className="carousel-item relative w-full">
-                    <div className="img-gradient-bottom w-full  rounded-xl">
-                        <img src={banner2} className="w-full rounded-xl" alt="" />
-                    </div>
-                    <div className='absolute text-center transform -translate-y-1/2 left-1/4 top-3/4'>
-                        <h1 className='lg:text-5xl font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
-                        <h2 className='lg:text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
-                    </div>
 
-                </div>
-                <div id="item3" className="carousel-item relative w-full">
+                <div id="item2" className="carousel-item relative w-full">
                     <div className="img-gradient-left w-full  rounded-xl">
                         <img src={banner3} className="w-full rounded-xl" alt='' />
 
@@ -39,6 +30,17 @@ const Banner = () => {
                         <h2 className='lg:text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
                     </div>
                 </div>
+
+                <div id="item3" className="carousel-item relative w-full">
+                    <div className="img-gradient-bottom w-full  rounded-xl">
+                        <img src={banner2} className="w-full rounded-xl" alt="" />
+                    </div>
+                    <div className='absolute text-center transform -translate-y-1/2 left-1/4 top-3/4'>
+                        <h1 className='lg:text-5xl font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
+                        <h2 className='lg:text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
+                    </div>
+                </div>
+
                 <div id="item4" className="carousel-item relative w-full">
                     <div className="img-gradient-right w-full">
                         <img src={banner4} className="w-full rounded-xl" alt='' />

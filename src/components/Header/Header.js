@@ -7,7 +7,7 @@ const Header = () => {
         <li className='font-semibold text-white'><Link to='/'>Home</Link></li>
         <li className='font-semibold text-white'><Link to='/'>Services</Link></li>
         <li className='font-semibold text-white'><Link to='/'>Blog</Link></li>
-        <li className='font-semibold text-white'><Link to='/'>About us</Link></li>
+        <li className='font-semibold text-white'><Link to='/login'>Login</Link></li>
     </>
     return (
         <div className="navbar bg-base-100" data-theme="business">
