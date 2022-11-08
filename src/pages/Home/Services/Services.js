@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ServiceCard from './ServiceCard'
-import image1 from '../../../images/services/1Complete-exams-x-rays-and-dental-cleanings.jpg'
 
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('services.json')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
