@@ -2,7 +2,7 @@
     {
         "service_id": "01",
         "serviceName": "x-rays and dental cleanings",
-        "img": "https://post.healthline.com/wp-content/uploads/2020/08/5477-dentist_showing_patient_xrays-732x549-thumbnail.jpg",
+        "img": "http://justsmilezdental.com/wp-content/uploads/2020/08/x-rays-01.jpg",
         "price": "1500",
         "rating": "4.5",
         "description": "Dental X-rays require no special preparation. The only thing you'll want to do is brush your teeth before your appointment. That creates a more hygienic environment for those working inside your mouth. X-rays are usually done before cleanings."
@@ -10,7 +10,7 @@
     {
         "service_id": "02",
         "serviceName": "Fillings and root canals",
-        "img": "https://www.putneydentalcare.com.au/wp-content/uploads/Cover-Photo.jpg",
+        "img": "https://bridgewaydental.com/wp-content/uploads/2021/09/root-canal1.jpg",
         "price": "1800",
         "rating": "4.9",
         "description": "A root canal clears away bacteria and damaged tissue to relieve pain and save the tooth. A filling restores the function and cosmetic appearance of the tooth; a root canal cleans and protects the soft tissue inside the tooth from further damage."
@@ -18,7 +18,7 @@
     {
         "service_id": "03",
         "serviceName": "Implant placement and restoration",
-        "img": "https://www.dentalhealthbonita.com/wp-content/uploads/2021/05/MicrosoftTeams-image-47.png",
+        "img": "https://www.familydentalcare.co.za/wp-content/uploads/2017/12/dental-implants.jpg",
         "price": "1330",
         "rating": "4.7",
         "description": "After you heal from your implant placement, you can revisit your dentist for an implant restoration. Your dentist or oral surgeon will put you under anesthesia and connect the abutment to the implant. It can take about two weeks for your gums to heal before having your dental prosthetic attached."
@@ -34,7 +34,7 @@
     {
         "service_id": "05",
         "serviceName": "Cosmetic dentistry smile makeover",
-        "img": "https://www.dentalworld.com.ph/sites/default/files/cosmetic-dentistry_0.jpg",
+        "img": "https://www.polarisfamilydental.com/wp-content/uploads/2017/09/Cosmetic-Dentistry.jpg",
         "price": "2350",
         "rating": "5",
         "description": "Cosmetic dentistry is a method of professional oral care that focuses on improving the appearance of your teeth. And although cosmetic dentistry procedures are usually elective rather than essential, some treatment cases also provide restorative benefits."
