@@ -14,8 +14,8 @@ const Banner = () => {
                         <img src={banner1} className="w-full rounded-xl" alt="" />
                     </div>
                     <div className='absolute text-end transform -translate-y-1/2 left-5 right-5 top-1/4'>
-                        <h1 className='text-5xl font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
-                        <h2 className='text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
+                        <h1 className='lg:text-5xl font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
+                        <h2 className='lg:text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
                     </div>
                 </div>
 
@@ -24,8 +24,8 @@ const Banner = () => {
                         <img src={banner2} className="w-full rounded-xl" alt="" />
                     </div>
                     <div className='absolute text-center transform -translate-y-1/2 left-1/4 top-3/4'>
-                        <h1 className='text-5xl font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
-                        <h2 className='text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
+                        <h1 className='lg:text-5xl font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
+                        <h2 className='lg:text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
                     </div>
 
                 </div>
@@ -35,8 +35,8 @@ const Banner = () => {
 
                     </div>
                     <div className='absolute text-start transform -translate-y-1/2 left-5 top-2/4'>
-                        <h1 className='text-5xl font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
-                        <h2 className='text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
+                        <h1 className='lg:text-5xl font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
+                        <h2 className='lg:text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
                     </div>
                 </div>
                 <div id="item4" className="carousel-item relative w-full">
@@ -44,8 +44,8 @@ const Banner = () => {
                         <img src={banner4} className="w-full rounded-xl" alt='' />
                     </div>
                     <div className='absolute text-end transform -translate-y-1/2 right-12 top-1/4'>
-                        <h1 className='text-5xl font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
-                        <h2 className='text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
+                        <h1 className='lg:text-5xl font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
+                        <h2 className='lg:text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
                     </div>
                 </div>
             </div>

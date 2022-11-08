@@ -27,6 +27,8 @@ const Header = () => {
                 <Link to='/' className="btn btn-ghost normal-case text-xl">
                     <img className='rounded-lg h-2/3' src={logo} alt="" />
                 </Link>
+                <h3 className="lg:text-2xl mx-3 font-semibold text-white">Personal Dental Care</h3>
+
             </div>
 
             {/* In full screen */}
