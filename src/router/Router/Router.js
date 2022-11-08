@@ -3,6 +3,7 @@ import Blog from "../../components/Blog/Blog";
 import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
+import ServiceDetailsPage from "../../pages/ServiceDetailsPage/ServiceDetailsPage";
 import Signup from "../../pages/Signup/Signup";
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/services/:id',
+                element: <ServiceDetailsPage></ServiceDetailsPage>
             }
         ]
     }
