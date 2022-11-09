@@ -46,7 +46,7 @@ const ReviewSection = () => {
                     const remaining = reviews.filter(urv => urv._id !== _id);
                     const approving = reviews.find(urv => urv._id === _id);
                     approving.status = 'Approved';
-                    const newReviews = [...remaining, approving];
+                    const newReviews = [approving, ...remaining];
                     setReviews(newReviews);
                 }
             })
@@ -69,8 +69,8 @@ const ReviewSection = () => {
                             </th>
                             <th className='text-orange-600'>User</th>
                             <th className='text-orange-600'>Service Name</th>
-                            <th className='text-center text-orange-600'>Review Message</th>
-                            <th></th>
+                            <th className='text-orange-600'>Review Message</th>
+                            <th className='text-start text-orange-600'>Update Review</th>
                         </tr>
                     </thead>
 

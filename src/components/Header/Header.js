@@ -2,9 +2,15 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import logo from '../../images/logo/logo.jpg'
+import unregisteredUser from '../../images/others/unregisteredUser.png'
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, singOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        singOut()
+            .then()
+            .catch()
+    }
     const menuItems = <>
         <li className='font-semibold text-white'><Link to='/'>Home</Link></li>
         <li className='font-semibold text-white'><Link to='/services'>Services</Link></li>
@@ -12,6 +18,7 @@ const Header = () => {
         {
             user?.email ?
                 <> <li className='font-semibold text-white'><Link to='/reviews'>My Reviews</Link></li>
+                    <li><button onClick={handleLogOut} className="btn btn-ghost rounded-xl text-red-300">Log out</button></li>
                 </> :
                 <li className='font-semibold text-white'><Link to='/login'>Login</Link></li>
         }
@@ -47,7 +54,11 @@ const Header = () => {
 
             <div className="navbar-end">
                 <p>{user?.displayName}</p>
-                <button className="btn btn-ghost rounded-xl text-red-300">Log out</button>
+                {
+                    user?.email ? <img className='h-12 w-12 rounded-full mx-5' title={user?.displayName} src={user?.photoURL} alt="" /> : <img className='h-12 w-12 rounded-full mx-5' title={'Unregistered user'} src={unregisteredUser} alt="" />
+                }
+
+                {/* <button className="btn btn-ghost rounded-xl text-red-300">Log out</button> */}
             </div>
         </div>
     );

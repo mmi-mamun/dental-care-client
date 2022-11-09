@@ -1,23 +1,51 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import img from '../../images/others/login.png'
 
 const Login = () => {
     const { logIn } = useContext(AuthContext);
+    let location = useLocation();
+    const from = location.state?.from?.pathname || '/'
+    const navigate = useNavigate();
+
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
+
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
 
+
         logIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
+                console.log(user);
+                form.reset();
+                setSuccess(true);
+                // navigate('/');
+                navigate(from, { replace: true });
             })
-            .catch(err => console.error(err))
+            .catch(error => {
+                console.error('Error::', error);
+                setError(error.message);
+            })
     }
+    // const handleLogin = event => {
+    //     event.preventDefault();
+    //     const form = event.target;
+    //     const email = form.email.value;
+    //     const password = form.password.value;
+
+    //     logIn(email, password)
+    //         .then(result => {
+    //             const user = result.user;
+    //             console.log(user)
+    //         })
+    //         .catch(err => console.error(err))
+    // }
     return (
         <div className="hero w-full bg-base-200">
             <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row-reverse">
@@ -37,16 +65,19 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input name='password' type="text" placeholder="password" className="input input-bordered" required />
+                            <input name='password' type="password" placeholder="password" className="input input-bordered" required />
+                            <p className='text-red-500'>{error}</p>
+                            {
+                                success && <p className='text-success'>User successfully added</p>
+                            }
+                            <br />
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <Link to="/signup" className="label-text-alt link link-hover">New user?  Please register first..</Link>
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input className='btn btn-primary' type="submit" value="Login" />
+                            <button className="btn btn-primary">Login</button>
                         </div>
-
-                        <p className='text-center my-3'>New to dental service?.. <Link to='/signup' className='text-orange-600'>Sign up</Link></p>
                     </form>
                 </div>
             </div>
