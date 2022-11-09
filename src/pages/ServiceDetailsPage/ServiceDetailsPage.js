@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ReviewTableRow from '../../components/ReviewSection/ReviewTableRow';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { FaGithub, FaGoogle, FaStar } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa';
 
 
 const ServiceDetailsPage = () => {

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import logo from '../../images/logo/logo.jpg'
@@ -6,6 +6,9 @@ import unregisteredUser from '../../images/others/unregisteredUser.png'
 
 const Header = () => {
     const { user, singOut } = useContext(AuthContext);
+    const [services, setServices] = useState({ rating: "4.5", img: "https://img.dentaleconomics.com/files/base/ebm/de/image/2021/07/16x9/dental_patient.60f8947953ef0.png?auto=format,compress&w=500&h=281&fit=clip" });
+
+
     const handleLogOut = () => {
         singOut()
             .then()
@@ -17,14 +20,74 @@ const Header = () => {
         <li className='font-semibold text-white'><Link to='/blog'>Blog</Link></li>
         {
             user?.uid ?
-                <> <li className='font-semibold text-white'><Link to='/reviews'>My Reviews</Link></li>
+                <>
+                    <li className='font-semibold text-white'><Link to='/reviews'>My Reviews</Link></li>
+                    <a href="#my-modal-2" className="btn btn-ghost">Add Service</a>
                     <li><button onClick={handleLogOut} className="btn btn-ghost rounded-xl text-red-300">Log out</button></li>
                 </> :
                 <li className='font-semibold text-white'><Link to='/login'>Login</Link></li>
         }
     </>
+
+
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        console.log(services);
+
+        fetch('http://localhost:5000/services', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(services)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                if (data.acknowledged) {
+                    alert('User added successfully');
+                    event.target.reset();
+                }
+            })
+
+    }
+
+    const handleOnBlur = event => {
+        const field = event.target.name;
+        const value = event.target.value;
+
+        const newService = { ...services };
+        // console.log(newUser);
+
+        newService[field] = value;
+        // console.log(newUser);
+        setServices(newService);
+
+    }
     return (
         <div className="navbar bg-base-100" data-theme="business">
+            <div>
+                <div className="modal w-full" id="my-modal-2">
+                    <div className="modal-box">
+                        <div>
+                            <h2 className='text-xl text-center text-orange-600 font-semibold'>You can add service if you want..</h2>
+                            <form className='text-center' onSubmit={handleSubmit}>
+                                <input onBlur={handleOnBlur} type="text" name="serviceName" id="" placeholder='Name of service' className="input input-bordered input-primary w-full max-w-xs my-3 rounded-lg" required />
+
+                                <input onBlur={handleOnBlur} type="number" name="price" id="" placeholder='Service fee' className="input input-bordered input-primary w-full max-w-xs my-3 rounded-lg" required />
+
+                                <input onBlur={handleOnBlur} type="text" name="description" id="" placeholder='Write short description' className="input input-bordered input-primary w-full max-w-xs my-3 rounded-lg" required />
+                                <br />
+                                <button type="submit" className='btn glass rounded-lg text-white'>Add Service</button>
+                            </form>
+                        </div>
+                        <div className="modal-action">
+                            <a href="/" className="btn">Back to home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
