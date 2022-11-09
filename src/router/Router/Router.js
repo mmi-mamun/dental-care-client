@@ -37,12 +37,12 @@ const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <ServiceDetailsPage></ServiceDetailsPage>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://personal-dental-server.vercel.app/services/${params.id}`)
             },
             // {
             //     path: '/services/services/:id',
             //     element: <ServiceDetailsPage></ServiceDetailsPage>,
-            //     loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            //     loader: ({ params }) => fetch(`https://personal-dental-server.vercel.app/services/${params.id}`)
             // },
             {
                 path: '/reviews',

@@ -5,7 +5,7 @@ import ServiceCard from './ServiceCard'
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://personal-dental-server.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data.slice(0, 3)))
     }, [])
@@ -21,9 +21,11 @@ const Services = () => {
                 }
             </div>
 
-            <Link to='/services'>
-                <button className="btn btn-active btn-accent mx-auto">See more</button>
-            </Link>
+            <div className="text-center my-5">
+                <Link to='/services'>
+                    <button className="btn btn-active btn-accent mx-auto">See more</button>
+                </Link>
+            </div>
         </div>
     );
 };

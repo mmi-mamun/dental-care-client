@@ -5,10 +5,10 @@ import ReviewTableRow from './ReviewTableRow';
 const ReviewSection = () => {
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
-    // const url = `http://localhost:5000/reviews?email=${user.email}`
+    // const url = `https://personal-dental-server.vercel.app/reviews?email=${user.email}`
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://personal-dental-server.vercel.app/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setReviews(data));
     }, [user?.email])
@@ -16,7 +16,7 @@ const ReviewSection = () => {
     const handleDelete = _id => {
         const proceed = window.confirm('Are you sure to delete your comment?');
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${_id}`, {
+            fetch(`https://personal-dental-server.vercel.app/reviews/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -32,7 +32,7 @@ const ReviewSection = () => {
     }
 
     const handleStatusUpdate = _id => {
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://personal-dental-server.vercel.app/reviews/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
