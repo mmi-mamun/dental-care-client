@@ -39,11 +39,11 @@ const router = createBrowserRouter([
                 element: <ServiceDetailsPage></ServiceDetailsPage>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
-            {
-                path: '/services/services/:id',
-                element: <ServiceDetailsPage></ServiceDetailsPage>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
-            },
+            // {
+            //     path: '/services/services/:id',
+            //     element: <ServiceDetailsPage></ServiceDetailsPage>,
+            //     loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            // },
             {
                 path: '/reviews',
                 element: <ReviewSection></ReviewSection>
