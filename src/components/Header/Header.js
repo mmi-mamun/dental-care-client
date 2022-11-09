@@ -16,7 +16,7 @@ const Header = () => {
         <li className='font-semibold text-white'><Link to='/services'>Services</Link></li>
         <li className='font-semibold text-white'><Link to='/blog'>Blog</Link></li>
         {
-            user?.email ?
+            user?.uid ?
                 <> <li className='font-semibold text-white'><Link to='/reviews'>My Reviews</Link></li>
                     <li><button onClick={handleLogOut} className="btn btn-ghost rounded-xl text-red-300">Log out</button></li>
                 </> :
@@ -55,7 +55,7 @@ const Header = () => {
             <div className="navbar-end">
                 <p>{user?.displayName}</p>
                 {
-                    user?.email ? <img className='h-12 w-12 rounded-full mx-5' title={user?.displayName} src={user?.photoURL} alt="" /> : <img className='h-12 w-12 rounded-full mx-5' title={'Unregistered user'} src={unregisteredUser} alt="" />
+                    user?.uid ? <img className='h-12 w-12 rounded-full mx-5' title={user?.displayName} src={user?.photoURL} alt="" /> : <img className='h-12 w-12 rounded-full mx-5' title={'Unregistered user'} src={unregisteredUser} alt="" />
                 }
 
                 {/* <button className="btn btn-ghost rounded-xl text-red-300">Log out</button> */}

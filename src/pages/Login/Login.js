@@ -2,15 +2,43 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import img from '../../images/others/login.png'
+import { FaBeer, FaGithub, FaGoogle } from 'react-icons/fa';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const { logIn } = useContext(AuthContext);
+    const { logIn, providerLogin, githubLogin } = useContext(AuthContext);
     let location = useLocation();
     const from = location.state?.from?.pathname || '/'
     const navigate = useNavigate();
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const [error, setError] = useState('');
     const [success, setSuccess] = useState(false);
+
+    const handleGoogleLogin = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.error('Error::', error);
+            })
+    }
+
+    const handleGithubLogin = () => {
+        githubLogin(githubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.error('Error::', error);
+            })
+    }
 
     const handleLogin = event => {
         event.preventDefault();
@@ -70,14 +98,31 @@ const Login = () => {
                                 success && <p className='text-success'>User successfully added</p>
                             }
                             <br />
-                            <label className="label">
-                                <Link to="/signup" className="label-text-alt link link-hover">New user?  Please register first..</Link>
-                            </label>
+
+
+                            <div className="text-center">
+                                <p>
+                                    New user?  <Link to="/signup" className="label-text-alt link link-hover text-orange-400">Register first..</Link>
+                                </p>
+
+                            </div>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
+
+                    <div className='text-center text-xl'>
+                        <p className='text-orange-600 text-center'>Another options to login</p>
+                        <p className='text-center mt-2 mb-5'>
+                            <button onClick={handleGoogleLogin} className="btn btn-circle btn-outline mx-3  text-green-600">
+                                <FaGoogle className='h-8 w-12'></FaGoogle>
+                            </button>
+                            <button onClick={handleGithubLogin} className="btn btn-circle btn-outline text-green-600">
+                                <FaGithub className='h-8 w-12'></FaGithub>
+                            </button>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
