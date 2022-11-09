@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ServiceCard from './ServiceCard'
+import ServiceCard from './ServiceCard';
 
-const Services = () => {
+const ServiceAll = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/services')
             .then(res => res.json())
-            .then(data => setServices(data.slice(0, 3)))
+            .then(data => setServices(data))
     }, [])
     return (
         <div>
@@ -20,12 +20,8 @@ const Services = () => {
                     services.map(service => <ServiceCard service={service} key={service.service_id}></ServiceCard>)
                 }
             </div>
-
-            <Link to='/services'>
-                <button className="btn btn-active btn-accent mx-auto">See more</button>
-            </Link>
         </div>
     );
 };
 
-export default Services;
+export default ServiceAll;

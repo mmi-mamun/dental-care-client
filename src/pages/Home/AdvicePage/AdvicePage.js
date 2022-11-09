@@ -12,21 +12,17 @@ const AdvicePage = () => {
                 </div>
                 <div className='w-1/2'>
                     <h2 className='text-2xl text-orange-600 font-bold'>Top 10 Pieces of Advice</h2>
-
-                    <h5 className="text-2xl font-bold my-5">Special Training on Dental Implant
-                        <br />
-                        Asst. Prof. Dept. of Orthodontics Consultant (Orthodontics)</h5>
-
-                    <p className="pt-2 font-bold">Chamber: Labaid Dhanmondi Branch </p>
-
-                    <p className="pb-6 pt-1">
-                        House#6, Road#4, Dhanmondi, Dhaka-1205
-                        <br />
-                        Consulting Hours: 11:30 AM  ~  04:30 PM
-                        <br />
-                        Hotline: 10606
-                    </p>
-                    {/* <button className="btn btn-primary">Call Me</button> */}
+                    <br />
+                    <div className="text-start">
+                        <li className='mt-2'>Brush Regularly and Properly.</li>
+                        <li className='mt-2'>Floss Daily.</li>
+                        <li className='mt-2'>Rinse with a Fluoride Mouthwash.</li>
+                        <li className='mt-2'>Increase your Calcium Intake.</li>
+                        <li className='mt-2'>Cut Out Tobacco.</li>
+                        <li className='mt-2'> Limit Coffee Intake.</li>
+                        <li className='mt-2'>Limit Carbonated Beverages.</li>
+                        <li className='mt-2'>Have a Well-balanced Diet.</li>
+                    </div>
                 </div>
             </div>
         </div>

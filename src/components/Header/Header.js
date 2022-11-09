@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import logo from '../../images/logo/logo.jpg'
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
     const menuItems = <>
         <li className='font-semibold text-white'><Link to='/'>Home</Link></li>
-        <li className='font-semibold text-white'><Link to='/'>Services</Link></li>
+        <li className='font-semibold text-white'><Link to='/services'>Services</Link></li>
         <li className='font-semibold text-white'><Link to='/blog'>Blog</Link></li>
         <li className='font-semibold text-white'><Link to='/login'>Login</Link></li>
     </>
@@ -39,6 +41,7 @@ const Header = () => {
             </div>
 
             <div className="navbar-end">
+                <p>{user?.displayName}</p>
                 <button className="btn btn-ghost rounded-xl text-red-300">Log out</button>
             </div>
         </div>
