@@ -55,10 +55,9 @@ const ReviewSection = () => {
 
     return (
         <div className='mx-auto'>
-            <h2>Hi.. your total review {reviews.length}</h2>
             {
                 reviews?.length === 0 ?
-                    <div><h1 className="text-5xl">No Data</h1></div> :
+                    <div className='mx-auto my-12'><h1 className="text-5xl text-orange-600 mx-5 text-center">NO REVIEWS WERE ADDED</h1></div> :
                     <div className="overflow-x-auto w-full">
 
                         <table className="table w-full">

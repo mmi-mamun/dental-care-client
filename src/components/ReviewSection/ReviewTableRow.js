@@ -3,7 +3,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const ReviewTableRow = ({ review, handleDelete, handleStatusUpdate }) => {
     const { user } = useContext(AuthContext);
-    const { _id, serviceName, price, UserName, email, comment, status } = review;
+    const { _id, serviceName, UserName, email, comment, status } = review;
 
 
 

@@ -46,7 +46,7 @@ const Header = () => {
             .then(data => {
                 // console.log(data)
                 if (data.acknowledged) {
-                    alert('User added successfully');
+                    alert('Service added successfully');
                     event.target.reset();
                 }
             })
@@ -83,7 +83,7 @@ const Header = () => {
                             </form>
                         </div>
                         <div className="modal-action">
-                            <a href="/" className="btn">Back to home</a>
+                            <a href="/#" className="btn">Back to home</a>
                         </div>
                     </div>
                 </div>

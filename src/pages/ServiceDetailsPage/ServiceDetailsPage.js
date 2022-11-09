@@ -6,7 +6,7 @@ import { FaStar } from 'react-icons/fa';
 
 
 const ServiceDetailsPage = () => {
-    const { serviceName, price, img, description, service_id, rating } = useLoaderData();
+    const { serviceName, price, img, description, _id, rating } = useLoaderData();
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
 
@@ -58,8 +58,8 @@ const ServiceDetailsPage = () => {
                     <img src={img} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                     <div>
                         <h1 className="text-5xl font-bold text-center">{serviceName}</h1>
+                        <p className='p-5 text-xl text-yellow-600 text-center'>Service ID: {_id}</p>
                         <p className='flex justify-around my-5 text-xl text-orange-600 font-semibold'>
-                            <span className='px-5'>Service ID: {service_id}</span>
                             <span className='px-5'>Fee: {price} Taka</span>
                             <span className='px-5 flex items-center'>Rating: {rating} <FaStar className='mx-2'></FaStar></span>
                         </p>
@@ -73,7 +73,7 @@ const ServiceDetailsPage = () => {
             <form onSubmit={handleReview}>
                 <div className="form-control">
                     <label className="label mx-3">
-                        <span className="label-text">Share your opinion...</span>
+                        <span className="label-text">Share your opinion about this service...</span>
                         <span className="label-text-alt">Review</span>
                     </label>
                     <textarea name='comment' className="textarea textarea-bordered h-24" placeholder="Write here.." ></textarea>
