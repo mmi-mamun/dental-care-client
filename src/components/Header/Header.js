@@ -9,7 +9,12 @@ const Header = () => {
         <li className='font-semibold text-white'><Link to='/'>Home</Link></li>
         <li className='font-semibold text-white'><Link to='/services'>Services</Link></li>
         <li className='font-semibold text-white'><Link to='/blog'>Blog</Link></li>
-        <li className='font-semibold text-white'><Link to='/login'>Login</Link></li>
+        {
+            user?.email ?
+                <> <li className='font-semibold text-white'><Link to='/reviews'>My Reviews</Link></li>
+                </> :
+                <li className='font-semibold text-white'><Link to='/login'>Login</Link></li>
+        }
     </>
     return (
         <div className="navbar bg-base-100" data-theme="business">

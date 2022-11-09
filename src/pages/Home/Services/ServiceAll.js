@@ -10,7 +10,7 @@ const ServiceAll = () => {
             .then(data => setServices(data))
     }, [])
     return (
-        <div>
+        <div className='my-5'>
             <div className="text-center my-5">
                 <p className="text-2xl font-bold text-orange-600">Services</p>
                 <h2 className="text-5xl font-semibold">Services Area</h2>

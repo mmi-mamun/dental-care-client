@@ -1,19 +1,71 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import ReviewTableRow from './ReviewTableRow';
 
 const ReviewSection = () => {
     const { user } = useContext(AuthContext);
-    const [review, setReview] = useState({});
+    const [reviews, setReviews] = useState([]);
     // const url = `http://localhost:5000/reviews?email=${user.email}`
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`)
             .then(res => res.json())
-            .then(data => setReview(data));
+            .then(data => setReviews(data));
     }, [user?.email])
+
+    const handleDelete = _id => {
+        const proceed = window.confirm('Are you sure to delete your comment?');
+        if (proceed) {
+            fetch(`http://localhost:5000/reviews/${_id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('Deleted successfully');
+                        const remaining = reviews.filter(rvw => rvw._id !== _id);
+                        setReviews(remaining);
+                    }
+                })
+        }
+    }
+
+
     return (
-        <div>
-            <h2>Hi.. your total review {review.length}</h2>
+        <div className='mx-auto'>
+            <h2>Hi.. your total review {reviews.length}</h2>
+            <div className="overflow-x-auto w-full">
+
+                <table className="table w-full">
+                    {/* <!-- head --> */}
+                    <thead>
+                        <tr>
+                            <th>
+                                <label>
+                                    <input type="checkbox" className="checkbox" />
+                                </label>
+                            </th>
+                            <th className='text-orange-600'>User</th>
+                            <th className='text-orange-600'>Service Name</th>
+                            <th className='text-center text-orange-600'>Review Message</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+
+                        {
+                            reviews?.map(review =>
+                                <ReviewTableRow review={review} handleDelete={handleDelete} key={review._id}></ReviewTableRow>)
+                        }
+
+                    </tbody>
+
+
+                </table>
+            </div>
         </div>
     );
 };
