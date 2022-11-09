@@ -7,6 +7,7 @@ import ServiceAll from "../../pages/Home/Services/ServiceAll";
 import Login from "../../pages/Login/Login";
 import ServiceDetailsPage from "../../pages/ServiceDetailsPage/ServiceDetailsPage";
 import Signup from "../../pages/Signup/Signup";
+import PrivateRouter from "../PrivateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -36,14 +37,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/services/:id',
-                element: <ServiceDetailsPage></ServiceDetailsPage>,
+                element: <PrivateRouter><ServiceDetailsPage></ServiceDetailsPage></PrivateRouter>,
                 loader: ({ params }) => fetch(`https://personal-dental-server.vercel.app/services/${params.id}`)
             },
-            // {
-            //     path: '/services/services/:id',
-            //     element: <ServiceDetailsPage></ServiceDetailsPage>,
-            //     loader: ({ params }) => fetch(`https://personal-dental-server.vercel.app/services/${params.id}`)
-            // },
             {
                 path: '/reviews',
                 element: <ReviewSection></ReviewSection>

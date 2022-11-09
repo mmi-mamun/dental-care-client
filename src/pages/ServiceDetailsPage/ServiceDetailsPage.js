@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ReviewTableRow from '../../components/ReviewSection/ReviewTableRow';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { FaGithub, FaGoogle, FaStar } from 'react-icons/fa';
+
 
 const ServiceDetailsPage = () => {
-    const { serviceName, price } = useLoaderData();
+    const { serviceName, price, img, description, service_id, rating } = useLoaderData();
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
-
-    console.log(reviews)
 
     useEffect(() => {
         fetch(`https://personal-dental-server.vercel.app/reviews`)
@@ -52,7 +52,24 @@ const ServiceDetailsPage = () => {
     }
     return (
         <div>
-            <h1>{serviceName}</h1>
+            {/* About service  */}
+            <div className="hero bg-base-200">
+                <div className="hero-content flex-col lg:flex-row-reverse">
+                    <img src={img} className="max-w-sm rounded-lg shadow-2xl" alt='' />
+                    <div>
+                        <h1 className="text-5xl font-bold text-center">{serviceName}</h1>
+                        <p className='flex justify-around my-5 text-xl text-orange-600 font-semibold'>
+                            <span className='px-5'>Service ID: {service_id}</span>
+                            <span className='px-5'>Fee: {price} Taka</span>
+                            <span className='px-5 flex items-center'>Rating: {rating} <FaStar className='mx-2'></FaStar></span>
+                        </p>
+                        <p className="py-6 text-justify">{description}</p>
+                    </div>
+                </div>
+            </div>
+
+
+            {/* Get review form  */}
             <form onSubmit={handleReview}>
                 <div className="form-control">
                     <label className="label mx-3">
@@ -61,20 +78,18 @@ const ServiceDetailsPage = () => {
                     </label>
                     <textarea name='comment' className="textarea textarea-bordered h-24" placeholder="Write here.." ></textarea>
                 </div>
-                <input className="btn btn-wide my-3 bg-orange-600" type="submit" value="SUBMIT" />
+                <div className='text-end mr-3'>
+                    <input className="btn btn-wide my-3 bg-orange-600" type="submit" value="SUBMIT" />
+                </div>
             </form>
 
-            <div className="overflow-x-auto w-full">
-
+            {/* All Reviews data  */}
+            <div className="overflow-x-auto w-full mt-12">
                 <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
+                            <th></th>
                             <th className='text-orange-600'>User</th>
                             <th className='text-orange-600'>Service Name</th>
                             <th className='text-orange-600'>Review Message</th>
