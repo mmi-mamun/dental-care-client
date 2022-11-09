@@ -31,6 +31,27 @@ const ReviewSection = () => {
         }
     }
 
+    const handleStatusUpdate = _id => {
+        fetch(`http://localhost:5000/reviews/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'Approved' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    const remaining = reviews.filter(urv => urv._id !== _id);
+                    const approving = reviews.find(urv => urv._id === _id);
+                    approving.status = 'Approved';
+                    const newReviews = [...remaining, approving];
+                    setReviews(newReviews);
+                }
+            })
+    }
+
 
     return (
         <div className='mx-auto'>
@@ -58,7 +79,11 @@ const ReviewSection = () => {
 
                         {
                             reviews?.map(review =>
-                                <ReviewTableRow review={review} handleDelete={handleDelete} key={review._id}></ReviewTableRow>)
+                                <ReviewTableRow
+                                    review={review}
+                                    handleDelete={handleDelete}
+                                    handleStatusUpdate={handleStatusUpdate}
+                                    key={review._id}></ReviewTableRow>)
                         }
 
                     </tbody>

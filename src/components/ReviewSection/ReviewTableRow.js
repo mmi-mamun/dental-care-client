@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
-const ReviewTableRow = ({ review, handleDelete }) => {
+const ReviewTableRow = ({ review, handleDelete, handleStatusUpdate }) => {
     const { user } = useContext(AuthContext);
-    const { _id, serviceName, price, UserName, email, comment } = review;
+    const { _id, serviceName, price, UserName, email, comment, status } = review;
 
 
 
@@ -34,7 +34,11 @@ const ReviewTableRow = ({ review, handleDelete }) => {
             </td>
             <td>{comment.slice(0, 50)}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <button onClick={() => handleStatusUpdate(_id)} className="btn btn-ghost btn-xs">
+                    {
+                        status ? status : 'Pending review'
+                    }
+                </button>
             </th>
         </tr>
     );
