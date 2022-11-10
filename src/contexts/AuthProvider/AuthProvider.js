@@ -7,7 +7,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -15,17 +15,21 @@ const AuthProvider = ({ children }) => {
     }
 
     const logIn = (email, password) => {
-        setLoading(true);
+        // setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const providerLogin = (provider) => {
-        setLoading(true);
+        // setLoading(true);
         return signInWithPopup(auth, provider);
     }
 
+    // const githubLogin = (provider) => {
+    //     setLoading(true);
+    //     return signInWithPopup(auth, provider);
+    // }
+
     const githubLogin = (provider) => {
-        setLoading(true);
         return signInWithPopup(auth, provider);
     }
 

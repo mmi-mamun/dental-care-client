@@ -1,6 +1,6 @@
 [
     {
-        "service_id": "01",
+        "service_id": 1,
         "serviceName": "x-rays and dental cleanings",
         "img": "http://justsmilezdental.com/wp-content/uploads/2020/08/x-rays-01.jpg",
         "price": "1500",
@@ -8,7 +8,7 @@
         "description": "Dental X-rays require no special preparation. The only thing you'll want to do is brush your teeth before your appointment. That creates a more hygienic environment for those working inside your mouth. X-rays are usually done before cleanings."
     },
     {
-        "service_id": "02",
+        "service_id": 2,
         "serviceName": "Fillings and root canals",
         "img": "https://bridgewaydental.com/wp-content/uploads/2021/09/root-canal1.jpg",
         "price": "1800",
@@ -16,7 +16,7 @@
         "description": "A root canal clears away bacteria and damaged tissue to relieve pain and save the tooth. A filling restores the function and cosmetic appearance of the tooth; a root canal cleans and protects the soft tissue inside the tooth from further damage."
     },
     {
-        "service_id": "03",
+        "service_id": 3,
         "serviceName": "Implant placement and restoration",
         "img": "https://www.familydentalcare.co.za/wp-content/uploads/2017/12/dental-implants.jpg",
         "price": "1330",
@@ -24,7 +24,7 @@
         "description": "After you heal from your implant placement, you can revisit your dentist for an implant restoration. Your dentist or oral surgeon will put you under anesthesia and connect the abutment to the implant. It can take about two weeks for your gums to heal before having your dental prosthetic attached."
     },
     {
-        "service_id": "04",
+        "service_id": 4,
         "serviceName": "Crowns, bridges and dentures",
         "img": "https://spsdental.com/wp-content/uploads/2019/05/Dental-bridge.png",
         "price": "2000",
@@ -32,7 +32,7 @@
         "description": "Crowns and bridges are cemented onto existing teeth or implants, unlike removable devices such as dentures, which you can take out and clean daily. Porcelain crowns can be matched to the color of your natural teeth, bonded to a metal shell that is both strong and attractive."
     },
     {
-        "service_id": "05",
+        "service_id": 5,
         "serviceName": "Cosmetic dentistry smile makeover",
         "img": "https://www.polarisfamilydental.com/wp-content/uploads/2017/09/Cosmetic-Dentistry.jpg",
         "price": "2350",
@@ -40,7 +40,7 @@
         "description": "Cosmetic dentistry is a method of professional oral care that focuses on improving the appearance of your teeth. And although cosmetic dentistry procedures are usually elective rather than essential, some treatment cases also provide restorative benefits."
     },
     {
-        "service_id": "06",
+        "service_id": 6,
         "serviceName": "Orthodontics Treatment",
         "img": "https://veskedent.com/wp-content/uploads/2018/10/orthodontic-treathment.jpg",
         "price": "1600",

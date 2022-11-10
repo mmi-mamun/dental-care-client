@@ -66,10 +66,8 @@ const ReviewSection = () => {
                             {/* <!-- head --> */}
                             <thead>
                                 <tr>
-                                    <th>
-                                        <label>
-                                            <input type="checkbox" className="checkbox" />
-                                        </label>
+                                    <th className='text-orange-600'>
+                                        <p>Select to remove</p>
                                     </th>
                                     <th className='text-orange-600'>User</th>
                                     <th className='text-orange-600'>Service Name</th>

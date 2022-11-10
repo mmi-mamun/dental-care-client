@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useLocation } from 'react-router-dom';
 import ReviewTableRow from '../../components/ReviewSection/ReviewTableRow';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaStar } from 'react-icons/fa';
@@ -7,6 +7,7 @@ import useTitle from '../../hooks/useTitle';
 
 
 const ServiceDetailsPage = () => {
+    const location = useLocation();
     const { serviceName, price, img, description, _id, rating } = useLoaderData();
     const { user } = useContext(AuthContext);
     useTitle('Details');
@@ -23,7 +24,7 @@ const ServiceDetailsPage = () => {
         event.preventDefault();
         const form = event.target;
         const comment = form.comment.value;
-        const email = user?.email || 'unregistered';
+        const email = user?.email || 'Github User';
 
         const userReview = {
             serviceName,
@@ -72,18 +73,21 @@ const ServiceDetailsPage = () => {
 
 
             {/* Get review form  */}
-            <form onSubmit={handleReview}>
-                <div className="form-control">
-                    <label className="label mx-3">
-                        <span className="label-text">Share your opinion about this service...</span>
-                        <span className="label-text-alt">Review</span>
-                    </label>
-                    <textarea name='comment' className="textarea textarea-bordered h-24" placeholder="Write here.." ></textarea>
-                </div>
-                <div className='text-end mr-3'>
-                    <input className="btn btn-wide my-3 bg-orange-600" type="submit" value="SUBMIT" />
-                </div>
-            </form>
+            {
+                user ? <form onSubmit={handleReview}>
+                    <div className="form-control">
+                        <label className="label mx-3">
+                            <span className="label-text">Share your opinion about this service...</span>
+                            <span className="label-text-alt">Review</span>
+                        </label>
+                        <textarea name='comment' className="textarea textarea-bordered h-24" placeholder="Write here.." ></textarea>
+                    </div>
+                    <div className='text-end mr-3'>
+                        <input className="btn btn-wide my-3 bg-orange-600" type="submit" value="SUBMIT" />
+                    </div>
+                </form> : <div className='text-center my-12 text-5xl'><Link to='/login' state={{ from: location }} replace><button className='btn-ghost p-3 rounded-xl text-green-600'> Please login to add a review </button></Link></div>
+            }
+
 
             {/* All Reviews data  */}
             <div className="overflow-x-auto w-full mt-12">

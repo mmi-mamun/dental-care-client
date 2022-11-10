@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
@@ -10,6 +10,12 @@ const Header = () => {
     useTitle('Add service');
     const [services, setServices] = useState({ rating: "4.5", img: "https://img.dentaleconomics.com/files/base/ebm/de/image/2021/07/16x9/dental_patient.60f8947953ef0.png?auto=format,compress&w=500&h=281&fit=clip" });
 
+    const [allService, setAllService] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/services')
+            .then(res => res.json())
+            .then(data => setAllService(data))
+    }, [allService])
 
     const handleLogOut = () => {
         singOut()
@@ -59,11 +65,10 @@ const Header = () => {
         const field = event.target.name;
         const value = event.target.value;
 
-        const newService = { ...services };
+        const newService = { ...services, service_id: allService?.length + 1 };
         // console.log(newUser);
 
         newService[field] = value;
-        // console.log(newUser);
         setServices(newService);
 
     }
