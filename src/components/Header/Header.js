@@ -37,7 +37,7 @@ const Header = () => {
 
         console.log(services);
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://personal-dental-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
