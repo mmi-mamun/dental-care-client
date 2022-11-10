@@ -12,7 +12,7 @@ const Header = () => {
 
     const [allService, setAllService] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://personal-dental-server.vercel.app/services')
             .then(res => res.json())
             .then(data => setAllService(data))
     }, [allService])
@@ -74,6 +74,7 @@ const Header = () => {
     }
     return (
         <div className="navbar bg-base-100" data-theme="business">
+
             <div>
                 <div className="modal w-full" id="my-modal-2">
                     <div className="modal-box">
@@ -95,6 +96,8 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+
+
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

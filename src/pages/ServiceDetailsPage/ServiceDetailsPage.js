@@ -24,7 +24,7 @@ const ServiceDetailsPage = () => {
         event.preventDefault();
         const form = event.target;
         const comment = form.comment.value;
-        const email = user?.email || 'Github User';
+        const email = user?.email || 'GithubUser';
 
         const userReview = {
             serviceName,
