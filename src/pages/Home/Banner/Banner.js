@@ -13,9 +13,9 @@ const Banner = () => {
                     <div className="img-gradient-right w-full  rounded-xl">
                         <img src={banner1} className="w-full rounded-xl" alt="" />
                     </div>
-                    <div className='absolute text-end transform -translate-y-1/2 left-5 right-5 top-1/4'>
-                        <h1 className='lg:text-5xl font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
-                        <h2 className='lg:text-2xl font-semibold'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
+                    <div className='absolute text-end transform -translate-y-1/2 left-5 right-5 md:top-1/3 lg:top-1/4 top-2/4'>
+                        <h1 className='lg:text-5xl md:text-xl text-sm font-semibold my-5'> Expert surgical care <br />  you know and trust</h1>
+                        <h2 className='hidden lg:block md:block lg:text-2xl md:text-xs font-semibold text-xs'>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. <br /> The goal is to prevent complications</h2>
                     </div>
                 </div>
 
