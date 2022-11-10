@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import ReviewTableRow from './ReviewTableRow';
 
 const ReviewSection = () => {
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
+    useTitle('Reviews');
     // const url = `https://personal-dental-server.vercel.app/reviews?email=${user.email}`
 
     useEffect(() => {

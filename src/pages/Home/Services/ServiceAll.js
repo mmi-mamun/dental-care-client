@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 import ServiceCard from './ServiceCard';
 
 const ServiceAll = () => {
     const [services, setServices] = useState([]);
+    useTitle('Services');
     useEffect(() => {
         fetch('https://personal-dental-server.vercel.app/services')
             .then(res => res.json())

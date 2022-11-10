@@ -2,12 +2,15 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import img from '../../images/others/login.png'
-import { FaBeer, FaGithub, FaGoogle } from 'react-icons/fa';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
     const { logIn, providerLogin, githubLogin } = useContext(AuthContext);
     let location = useLocation();
+    useTitle('Login');
+
     const from = location.state?.from?.pathname || '/'
     const navigate = useNavigate();
     const googleProvider = new GoogleAuthProvider();

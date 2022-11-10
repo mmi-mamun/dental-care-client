@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import logo from '../../images/logo/logo.jpg'
 import unregisteredUser from '../../images/others/unregisteredUser.png'
 
 const Header = () => {
     const { user, singOut } = useContext(AuthContext);
+    useTitle('Add service');
     const [services, setServices] = useState({ rating: "4.5", img: "https://img.dentaleconomics.com/files/base/ebm/de/image/2021/07/16x9/dental_patient.60f8947953ef0.png?auto=format,compress&w=500&h=281&fit=clip" });
 
 

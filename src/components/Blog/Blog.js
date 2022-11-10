@@ -1,7 +1,9 @@
 import React from 'react';
+import useTitle from '../../hooks/useTitle';
 import Post from '../Post/Post';
 
 const Blog = () => {
+    useTitle('Blog');
     const blogPosts = [
         {
             title: "What is the difference between SQL and NoSQL?",

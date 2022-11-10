@@ -3,11 +3,13 @@ import { useLoaderData } from 'react-router-dom';
 import ReviewTableRow from '../../components/ReviewSection/ReviewTableRow';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaStar } from 'react-icons/fa';
+import useTitle from '../../hooks/useTitle';
 
 
 const ServiceDetailsPage = () => {
     const { serviceName, price, img, description, _id, rating } = useLoaderData();
     const { user } = useContext(AuthContext);
+    useTitle('Details');
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
