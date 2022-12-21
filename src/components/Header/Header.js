@@ -25,6 +25,7 @@ const Header = () => {
     const menuItems = <>
         <li className='font-semibold text-white'><Link to='/'>Home</Link></li>
         <li className='font-semibold text-white'><Link to='/services'>Services</Link></li>
+        <li className='font-semibold text-white'><Link to='/contact'>Contact</Link></li>
         <li className='font-semibold text-white'><Link to='/blog'>Blog</Link></li>
         {
             user?.uid ?
