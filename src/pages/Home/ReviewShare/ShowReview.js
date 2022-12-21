@@ -208,6 +208,7 @@ const ShowReview = () => {
                 </div>
 
             </div>
+            <div className="divider">*</div>
         </div>
     );
 };

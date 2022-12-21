@@ -5,6 +5,7 @@ import AdvicePage from './AdvicePage/AdvicePage';
 import Banner from './Banner/Banner';
 import ShowReview from './ReviewShare/ShowReview';
 import Services from './Services/Services';
+import SubscribeForm from './Subscribe/SubscribeForm';
 
 const Home = () => {
     useTitle('Home');
@@ -14,6 +15,7 @@ const Home = () => {
             <Services></Services>
             <AdvicePage></AdvicePage>
             <ShowReview></ShowReview>
+            <SubscribeForm></SubscribeForm>
             <About></About>
             {/* https://www.nhs.uk/live-well/healthy-teeth-and-gums/take-care-of-your-teeth-and-gums/ */}
         </div>
