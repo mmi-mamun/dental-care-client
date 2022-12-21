@@ -3,6 +3,7 @@ import useTitle from '../../hooks/useTitle';
 import About from './About/About';
 import AdvicePage from './AdvicePage/AdvicePage';
 import Banner from './Banner/Banner';
+import ShowReview from './ReviewShare/ShowReview';
 import Services from './Services/Services';
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <Services></Services>
             <AdvicePage></AdvicePage>
+            <ShowReview></ShowReview>
             <About></About>
             {/* https://www.nhs.uk/live-well/healthy-teeth-and-gums/take-care-of-your-teeth-and-gums/ */}
         </div>

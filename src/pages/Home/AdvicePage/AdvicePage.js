@@ -5,15 +5,15 @@ import adviceAnimation from '../../../images/lottieJson/advice.json';
 
 const AdvicePage = () => {
     return (
-        <div className="hero my-20">
-            <div className="hero-content flex-col lg:flex-row">
+        <div className="hero my-3">
+            <div className="hero-content flex justify-center items-center flex-col lg:flex-row md:flex-row">
                 <div className='w-1/2 relative'>
                     <Lottie animationData={adviceAnimation} />
                     {/* <img className="mask mask-hexagon-2 w-3/4" src={doctor} alt='' /> */}
                     {/* <img src={teeth} alt='' className="rounded-lg shadow-2xl w-4/5 h-full" />
                     <img src={doctor} alt='' className="rounded-lg shadow-2xl absolute w-3/5 top-1/4 right-5 border-8" /> */}
                 </div>
-                <div className='w-1/2'>
+                <div className='w-1/2 px-5'>
                     <h2 className='text-2xl text-orange-600 font-bold'>Top 10 Pieces of Advice</h2>
                     <br />
                     <div className="text-start">

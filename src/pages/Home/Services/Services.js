@@ -26,6 +26,7 @@ const Services = () => {
                     <button className="btn btn-active btn-accent mx-auto">See more</button>
                 </Link>
             </div>
+            <div className="divider">*</div>
         </div>
     );
 };
