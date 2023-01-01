@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
-import logo from '../../images/logo/logo.jpg'
+// import logo from '../../images/logo/logo.jpg'
+import logo from '../../images/logo/projectLogo.png'
 import unregisteredUser from '../../images/others/unregisteredUser.png'
 
 const Header = () => {
@@ -115,7 +116,7 @@ const Header = () => {
                 <Link to='/' className="btn btn-ghost normal-case text-xl">
                     <img className='rounded-lg h-2/3' src={logo} alt="" />
                 </Link>
-                <h3 className="lg:text-2xl mx-3 font-semibold text-white">Personal Dental Care</h3>
+                {/* <h3 className="lg:text-2xl mx-3 font-semibold text-white">Personal Dental Care</h3> */}
 
             </div>
 
