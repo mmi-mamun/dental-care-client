@@ -10,7 +10,7 @@ const ServiceCard = ({ service }) => {
         <PhotoProvider>
             <div className="card glass mx-auto">
                 <PhotoView src={img}>
-                    <img className='rounded' src={img} alt="car!" />
+                    <img className='rounded' src={img} alt="*Dental Service*" />
                 </PhotoView>
                 <div className="card-body">
                     <h2 className="card-title font-bold text-center text-3xl">{serviceName}</h2>
