@@ -26,7 +26,7 @@ const ServiceAll = () => {
                 <h2 className="text-5xl font-semibold">Services Area</h2>
             </div>
             {
-                services?.length === 0 ? <Loader /> : <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-12">
+                services?.length === 0 ? <Loader /> : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {
                         services.map(service => <ServiceCard service={service} key={service.service_id}></ServiceCard>)
                     }

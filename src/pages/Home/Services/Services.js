@@ -7,7 +7,7 @@ const Services = () => {
     useEffect(() => {
         fetch('https://personal-dental-server.vercel.app/services')
             .then(res => res.json())
-            .then(data => setServices(data.slice(0, 2)))
+            .then(data => setServices(data.slice(0, 3)))
     }, [])
     return (
         <div className='my-5 mx-5'>
@@ -15,7 +15,7 @@ const Services = () => {
                 <p className="text-2xl font-bold text-orange-600">Services</p>
                 <h2 className="text-5xl mb-5 font-semibold">Services Area</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {
                     services.map(service => <ServiceCard service={service} key={service.service_id}></ServiceCard>)
                 }
