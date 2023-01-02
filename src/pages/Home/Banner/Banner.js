@@ -10,7 +10,7 @@ const Banner = () => {
         <div>
             <div className="carousel w-full my-3">
                 <div id="item1" className="carousel-item relative w-full">
-                    <div className="img-gradient-right w-full  rounded-xl">
+                    <div className="w-full  rounded-xl">
                         <img src={banner1} className="w-full rounded-xl" alt="" />
                     </div>
                     {/* <div className='absolute text-end transform -translate-y-1/2 left-5 right-5 md:top-1/3 lg:top-1/4 top-2/4'>
@@ -21,7 +21,7 @@ const Banner = () => {
 
 
                 <div id="item2" className="carousel-item relative w-full">
-                    <div className="img-gradient-left w-full  rounded-xl">
+                    <div className="w-full  rounded-xl">
                         <img src={banner3} className="w-full rounded-xl" alt='' />
 
                     </div>
@@ -32,7 +32,7 @@ const Banner = () => {
                 </div>
 
                 <div id="item3" className="carousel-item relative w-full">
-                    <div className="img-gradient-bottom w-full  rounded-xl">
+                    <div className="w-full  rounded-xl">
                         <img src={banner2} className="w-full rounded-xl" alt="" />
                     </div>
                     {/* <div className='absolute text-center transform -translate-y-1/2 left-1/4 top-3/4'>
@@ -42,7 +42,7 @@ const Banner = () => {
                 </div>
 
                 <div id="item4" className="carousel-item relative w-full">
-                    <div className="img-gradient-right w-full">
+                    <div className="w-full">
                         <img src={banner4} className="w-full rounded-xl" alt='' />
                     </div>
                     {/* <div className='absolute text-end transform -translate-y-1/2 right-12 top-1/4'>
